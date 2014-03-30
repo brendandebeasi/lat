@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lat.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <main class=container-fluid>
+        <div class="row">
+            <div class="col-12">
+                <header>
+                    <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" >
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a onclick="$LAT.showArticlesForDefaultSection()" class="navbar-brand" href="#">LA Times Lite</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="section-list">
+                            <ul class="nav navbar-nav">
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="row main">
+            <div class="col-12">
+                <section class="article-body">
+
+
+
+                </section>
+            </div>
+            <div class="col-12">
+                <section class="articles">
+                </section>
+            </div>
+        </div>
+    </main>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="lat.js"></script>
+</body>
+</html>
