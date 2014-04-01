@@ -22,3 +22,19 @@
   -webkit-animation-duration: 0.5s;
   -webkit-animation-iteration-count: 10;
 }
+.nav>li>a {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding: 5px;
+}
+.nav>li:before, .nav>li:after {
+}
+.nav>li>a:after, .nav>li>a:before {
+	content: " | ";
+}
+.thumb {
+display: none;
+}
+.clear {
+	clear: both
+}

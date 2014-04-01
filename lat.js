@@ -5,6 +5,10 @@ $(document).ready(function() {
         this.apiBase = 'http://ds.tribune.com/v1';
         this.sections = [];
         this.articles = []
+        this.init = function() {
+            this.bindAjaxLoad();
+			this.loadSections();
+        }
         this.updateSections = function(sections) {
             $LAT.sections = sections;
             var el = $('#section-list ul');
@@ -20,16 +24,17 @@ $(document).ready(function() {
             el.html('');
             $LAT.articles = articles.Items;
             $.each($LAT.articles , function(i,v ) {
-                el.append('<article><h4><a onclick="$LAT.loadArticle(\''+v['Id']+'\')" href="javascript:void(0);">'+ v['Title']+'</a></h4></article>');
+
+                el.append('<article><h4><a style="background:url('+v.MetaData[0]['Value']+');background-size:cover;background-position:center;padding-top:40px;text-decoration:none;text-transform:capitalize;font-size:2.2rem;padding: 20px;text-align:center;background-repeat:none;color:#fff;text-shadow: 1px 1px 4px #888888;height: 450px;width:100%;display:block;" onclick="$LAT.loadArticle(\''+v['Id']+'\')" href="javascript:void(0);">'+ v['Title']+'</a></h4></article>');
             });
         };
         this.showArticle = function(article) {
             var el = $('section.article-body');
             el.html('' +
                 '<h1>'+article['Title']+'</h1>' +
-                '<div class="content">' + article["MetaData"][1]["Value"]+
-                '</div>');
+                '<div class="content"><div 	style="background:url('+article.MetaData[0]['Value']+');" class="thumb img-thumbnail"></div>' + article["MetaData"][1]["Value"]+'<div class="clear"></div></div>');
             $('section.article-body').slideDown();
+            $(window).scrollTop(0);
         };
         this.hideArticle = function() {
             $('section.article-body').slideUp();
@@ -66,8 +71,7 @@ $(document).ready(function() {
                 $('.navbar-brand').removeClass('pulse');
             });
         };
-        this.loadSections();
-        this.bindAjaxLoad();
+        this.init();
     }
     LAT();
 });
